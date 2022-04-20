@@ -42,6 +42,8 @@ type
     procedure btnZeroClick(Sender: TObject);
     procedure btnDoisClick(Sender: TObject);
     procedure btnClearClick(Sender: TObject);
+    procedure btnApagarClick(Sender: TObject);
+    procedure btnPontoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -237,6 +239,42 @@ begin
    btnSoma.Enabled := True;
    btnMult.Enabled := True;
    btnDivi.Enabled := True;
+
+end;
+
+procedure TForm1.btnApagarClick(Sender: TObject);
+begin
+
+   if (lblOperador.Caption = EmptyStr) then
+   begin
+      edtPValor.Text := Copy(
+         edtPValor.Text, 0, Length(edtPValor.Text)-1);
+   end
+   else
+   begin
+      edtSValor.Text := Copy(
+         edtSValor.Text, 0, Length(edtSValor.Text)-1);
+   end;
+
+  { if (lblOperador.Caption <> EmptyStr) then
+   begin
+      edtSValor.Text := Copy(
+         edtSValor.Text, 0, Length(edtSValor.Text)-1);
+   end; }
+
+end;
+
+procedure TForm1.btnPontoClick(Sender: TObject);
+begin
+
+  { if (lblOperador.Caption = EmptyStr) then
+   begin
+      edtPValor.Text := edtPValor.Text + '.';
+   end
+   else
+   begin
+      edtSValor.Text := edtSValor.Text + '.';
+   end; }
 
 end;
 

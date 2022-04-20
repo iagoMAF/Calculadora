@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 1234
-  Top = 212
+  Left = 1263
+  Top = 221
   Width = 308
   Height = 385
   Caption = 'Form1'
@@ -104,6 +104,7 @@ object Form1: TForm1
       Height = 41
       Caption = '.'
       TabOrder = 3
+      OnClick = btnPontoClick
     end
     object btnOito: TButton
       Left = 71
@@ -245,6 +246,7 @@ object Form1: TForm1
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 18
+      OnClick = btnApagarClick
     end
   end
 end

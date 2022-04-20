@@ -40,6 +40,8 @@ type
     procedure btnIgualClick(Sender: TObject);
     procedure btnUmClick(Sender: TObject);
     procedure btnZeroClick(Sender: TObject);
+    procedure btnDoisClick(Sender: TObject);
+    procedure btnClearClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -141,7 +143,7 @@ end;
 
 procedure TForm1.btnIgualClick(Sender: TObject);
 var
-   PrimeiroNumero, SegundoNumero : Double;
+   PrimeiroNumero, SegundoNumero, Resultado : Double;
 begin
 
    PrimeiroNumero := StrToFloat(edtPValor.Text);
@@ -150,22 +152,35 @@ begin
    if (lblOperador.Caption = '+') then
    begin
       ShowMessage(FloatToStr(PrimeiroNumero + SegundoNumero));
+      Resultado := PrimeiroNumero + SegundoNumero;
    end;
 
    if (lblOperador.Caption = '-') then
    begin
-      ShowMessage(FloatToStr(PrimeiroNumero - PrimeiroNumero));
+      ShowMessage(FloatToStr(PrimeiroNumero - SegundoNumero));
+      Resultado := PrimeiroNumero - SegundoNumero;
    end;
 
    if (lblOperador.Caption = 'x') then
    begin
       ShowMessage(FloatToStr(PrimeiroNumero * SegundoNumero));
+      Resultado := PrimeiroNumero * SegundoNumero;
    end;
 
    if (lblOperador.Caption = '/') then
    begin
       ShowMessage(FloatToStr(PrimeiroNumero / SegundoNumero));
+      Resultado := PrimeiroNumero / SegundoNumero;
    end;
+
+   lblOperador.Caption := EmptyStr;
+   edtPValor.Text      := FloatToStr(Resultado);
+   edtSValor.Text      := EmptyStr;
+
+   btnSubt.Enabled := True;
+   btnSoma.Enabled := True;
+   btnMult.Enabled := True;
+   btnDivi.Enabled := True;
 
 end;
 
@@ -194,6 +209,34 @@ begin
    begin
       edtSValor.Text := edtSValor.Text + '0';
    end;
+
+end;
+
+procedure TForm1.btnDoisClick(Sender: TObject);
+begin
+
+   if (lblOperador.Caption = EmptyStr) then
+   begin
+      edtPValor.Text := edtPValor.Text + '2';
+   end
+   else
+   begin
+      edtSValor.Text := edtSValor.Text + '2';
+   end;
+
+end;
+
+procedure TForm1.btnClearClick(Sender: TObject);
+begin
+
+   lblOperador.Caption := EmptyStr;
+   edtPValor.Text      := EmptyStr;
+   edtSValor.Text      := EmptyStr;
+
+   btnSubt.Enabled := True;
+   btnSoma.Enabled := True;
+   btnMult.Enabled := True;
+   btnDivi.Enabled := True;
 
 end;
 
