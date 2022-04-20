@@ -1,16 +1,20 @@
-object Form1: TForm1
-  Left = 1263
-  Top = 221
-  Width = 308
-  Height = 385
-  Caption = 'Form1'
+object frmCalculadora: TfrmCalculadora
+  Left = 1035
+  Top = 302
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Calculadora Delphi 7'
+  ClientHeight = 346
+  ClientWidth = 292
   Color = clBtnFace
+  DefaultMonitor = dmDesktop
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  Position = poDesktopCenter
   PixelsPerInch = 96
   TextHeight = 13
   object pnlResultado: TPanel
@@ -29,7 +33,7 @@ object Form1: TForm1
     object lblOperador: TLabel
       Left = 138
       Top = 34
-      Width = 15
+      Width = 7
       Height = 25
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -79,6 +83,7 @@ object Form1: TForm1
       Height = 41
       Caption = '7'
       TabOrder = 0
+      OnClick = btnSeteClick
     end
     object btnQuatro: TButton
       Left = 15
@@ -87,6 +92,7 @@ object Form1: TForm1
       Height = 41
       Caption = '4'
       TabOrder = 1
+      OnClick = btnQuatroClick
     end
     object btnUm: TButton
       Left = 15
@@ -113,6 +119,7 @@ object Form1: TForm1
       Height = 41
       Caption = '8'
       TabOrder = 4
+      OnClick = btnOitoClick
     end
     object btnCinco: TButton
       Left = 71
@@ -121,6 +128,7 @@ object Form1: TForm1
       Height = 41
       Caption = '5'
       TabOrder = 5
+      OnClick = btnCincoClick
     end
     object btnDois: TButton
       Left = 71
@@ -147,6 +155,7 @@ object Form1: TForm1
       Height = 41
       Caption = '9'
       TabOrder = 8
+      OnClick = btnNoveClick
     end
     object btnSeis: TButton
       Left = 127
@@ -155,6 +164,7 @@ object Form1: TForm1
       Height = 41
       Caption = '6'
       TabOrder = 9
+      OnClick = btnSeisClick
     end
     object btnTres: TButton
       Left = 127
@@ -163,6 +173,7 @@ object Form1: TForm1
       Height = 41
       Caption = '3'
       TabOrder = 10
+      OnClick = btnTresClick
     end
     object btnIgual: TButton
       Left = 127

@@ -7,7 +7,7 @@ uses
   Dialogs, StdCtrls, ExtCtrls;
 
 type
-  TForm1 = class(TForm)
+  TfrmCalculadora = class(TForm)
     pnlResultado: TPanel;
     pnlBotoes: TPanel;
     btnSete: TButton;
@@ -42,6 +42,15 @@ type
     procedure btnZeroClick(Sender: TObject);
     procedure btnDoisClick(Sender: TObject);
     procedure btnClearClick(Sender: TObject);
+    procedure btnApagarClick(Sender: TObject);
+    procedure btnPontoClick(Sender: TObject);
+    procedure btnTresClick(Sender: TObject);
+    procedure btnQuatroClick(Sender: TObject);
+    procedure btnCincoClick(Sender: TObject);
+    procedure btnSeisClick(Sender: TObject);
+    procedure btnSeteClick(Sender: TObject);
+    procedure btnOitoClick(Sender: TObject);
+    procedure btnNoveClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,19 +58,19 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmCalculadora: TfrmCalculadora;
 
 implementation
 
 {$R *.dfm}
 
-procedure TForm1.btnSairClick(Sender: TObject);
+procedure TfrmCalculadora.btnSairClick(Sender: TObject);
 begin
    Close;
 end;
 
 
-procedure TForm1.btnSubtClick(Sender: TObject);
+procedure TfrmCalculadora.btnSubtClick(Sender: TObject);
 begin
 
    if (lblOperador.Caption = EmptyStr) then
@@ -81,7 +90,7 @@ begin
 
 end;
 
-procedure TForm1.btnSomaClick(Sender: TObject);
+procedure TfrmCalculadora.btnSomaClick(Sender: TObject);
 begin
 
    if (lblOperador.Caption = EmptyStr) then
@@ -101,7 +110,7 @@ begin
 
 end;
 
-procedure TForm1.btnMultClick(Sender: TObject);
+procedure TfrmCalculadora.btnMultClick(Sender: TObject);
 begin
 
    if (lblOperador.Caption = EmptyStr) then
@@ -121,7 +130,7 @@ begin
 
 end;
 
-procedure TForm1.btnDiviClick(Sender: TObject);
+procedure TfrmCalculadora.btnDiviClick(Sender: TObject);
 begin
 
    if (lblOperador.Caption = EmptyStr) then
@@ -141,7 +150,7 @@ begin
 
 end;
 
-procedure TForm1.btnIgualClick(Sender: TObject);
+procedure TfrmCalculadora.btnIgualClick(Sender: TObject);
 var
    PrimeiroNumero, SegundoNumero, Resultado : Double;
 begin
@@ -151,25 +160,29 @@ begin
 
    if (lblOperador.Caption = '+') then
    begin
-      ShowMessage(FloatToStr(PrimeiroNumero + SegundoNumero));
+      ShowMessage('O resultado dessa soma é :  '
+         + FloatToStr(PrimeiroNumero + SegundoNumero));
       Resultado := PrimeiroNumero + SegundoNumero;
    end;
 
    if (lblOperador.Caption = '-') then
    begin
-      ShowMessage(FloatToStr(PrimeiroNumero - SegundoNumero));
+      ShowMessage('O resultado dessa subtração é : '
+         + FloatToStr(PrimeiroNumero - SegundoNumero));
       Resultado := PrimeiroNumero - SegundoNumero;
    end;
 
    if (lblOperador.Caption = 'x') then
    begin
-      ShowMessage(FloatToStr(PrimeiroNumero * SegundoNumero));
+      ShowMessage('O resultado dessa multiplicação é : '
+         + FloatToStr(PrimeiroNumero * SegundoNumero));
       Resultado := PrimeiroNumero * SegundoNumero;
    end;
 
    if (lblOperador.Caption = '/') then
    begin
-      ShowMessage(FloatToStr(PrimeiroNumero / SegundoNumero));
+      ShowMessage('O resultado dessa divisão é : '
+         + FloatToStr(PrimeiroNumero / SegundoNumero));
       Resultado := PrimeiroNumero / SegundoNumero;
    end;
 
@@ -184,7 +197,7 @@ begin
 
 end;
 
-procedure TForm1.btnUmClick(Sender: TObject);
+procedure TfrmCalculadora.btnUmClick(Sender: TObject);
 begin
 
    if (lblOperador.Caption = EmptyStr) then
@@ -198,7 +211,7 @@ begin
 
 end;
 
-procedure TForm1.btnZeroClick(Sender: TObject);
+procedure TfrmCalculadora.btnZeroClick(Sender: TObject);
 begin
 
    if (lblOperador.Caption = EmptyStr) then
@@ -212,7 +225,7 @@ begin
 
 end;
 
-procedure TForm1.btnDoisClick(Sender: TObject);
+procedure TfrmCalculadora.btnDoisClick(Sender: TObject);
 begin
 
    if (lblOperador.Caption = EmptyStr) then
@@ -226,7 +239,7 @@ begin
 
 end;
 
-procedure TForm1.btnClearClick(Sender: TObject);
+procedure TfrmCalculadora.btnClearClick(Sender: TObject);
 begin
 
    lblOperador.Caption := EmptyStr;
@@ -237,6 +250,140 @@ begin
    btnSoma.Enabled := True;
    btnMult.Enabled := True;
    btnDivi.Enabled := True;
+
+end;
+
+procedure TfrmCalculadora.btnApagarClick(Sender: TObject);
+begin
+
+   if (lblOperador.Caption = EmptyStr) then
+   begin
+      edtPValor.Text := Copy(
+         edtPValor.Text, 0, Length(edtPValor.Text)-1);
+   end
+   else
+   begin
+      edtSValor.Text := Copy(
+         edtSValor.Text, 0, Length(edtSValor.Text)-1);
+   end;
+
+  { if (lblOperador.Caption <> EmptyStr) then
+   begin
+      edtSValor.Text := Copy(
+         edtSValor.Text, 0, Length(edtSValor.Text)-1);
+   end; }
+
+end;
+
+procedure TfrmCalculadora.btnPontoClick(Sender: TObject);
+begin
+
+   if (lblOperador.Caption = EmptyStr) then
+   begin
+      edtPValor.Text := edtPValor.Text + ',';
+   end
+   else
+   begin
+      edtSValor.Text := edtSValor.Text + ',';
+   end;
+
+end;
+
+procedure TfrmCalculadora.btnTresClick(Sender: TObject);
+begin
+
+   if (lblOperador.Caption = EmptyStr) then
+   begin
+      edtPValor.Text := edtPValor.Text + '3';
+   end
+   else
+   begin
+      edtSValor.Text := edtSValor.Text + '3';
+   end;
+
+end;
+
+procedure TfrmCalculadora.btnQuatroClick(Sender: TObject);
+begin
+
+   if (lblOperador.Caption = EmptyStr) then
+   begin
+      edtPValor.Text := edtPValor.Text + '4';
+   end
+   else
+   begin
+      edtSValor.Text := edtSValor.Text + '4';
+   end;
+
+end;
+
+procedure TfrmCalculadora.btnCincoClick(Sender: TObject);
+begin
+
+   if (lblOperador.Caption = EmptyStr) then
+   begin
+      edtPValor.Text := edtPValor.Text + '5';
+   end
+   else
+   begin
+      edtSValor.Text := edtSValor.Text + '5';
+   end;
+
+end;
+
+procedure TfrmCalculadora.btnSeisClick(Sender: TObject);
+begin
+
+   if (lblOperador.Caption = EmptyStr) then
+   begin
+      edtPValor.Text := edtPValor.Text + '6';
+   end
+   else
+   begin
+      edtSValor.Text := edtSValor.Text + '6';
+   end;
+
+end;
+
+procedure TfrmCalculadora.btnSeteClick(Sender: TObject);
+begin
+
+   if (lblOperador.Caption = EmptyStr) then
+   begin
+      edtPValor.Text := edtPValor.Text + '7';
+   end
+   else
+   begin
+      edtSValor.Text := edtSValor.Text + '7';
+   end;
+
+end;
+
+procedure TfrmCalculadora.btnOitoClick(Sender: TObject);
+begin
+
+   if (lblOperador.Caption = EmptyStr) then
+   begin
+      edtPValor.Text := edtPValor.Text + '8';
+   end
+   else
+   begin
+      edtSValor.Text := edtSValor.Text + '8';
+   end;
+
+end;
+
+procedure TfrmCalculadora.btnNoveClick(Sender: TObject);
+begin
+
+   if (lblOperador.Caption = EmptyStr) then
+   begin
+      edtPValor.Text := edtPValor.Text + '9';
+   end
+   else
+   begin
+      edtSValor.Text := edtSValor.Text + '9';
+   end;
 
 end;
 
