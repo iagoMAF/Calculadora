@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 650
-  Top = 227
-  Width = 263
+  Left = 789
+  Top = 247
+  Width = 308
   Height = 385
   Caption = 'Form1'
   Color = clBtnFace
@@ -16,14 +16,20 @@ object Form1: TForm1
   object pnlResultado: TPanel
     Left = 0
     Top = 0
-    Width = 247
+    Width = 292
     Height = 89
     Align = alTop
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
     TabOrder = 0
     object lblOperador: TLabel
-      Left = 118
+      Left = 138
       Top = 34
-      Width = 38
+      Width = 15
       Height = 25
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -32,11 +38,37 @@ object Form1: TForm1
       Font.Style = [fsBold]
       ParentFont = False
     end
+    object edtPValor: TEdit
+      Left = 8
+      Top = 32
+      Width = 105
+      Height = 27
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+    end
+    object edtSValor: TEdit
+      Left = 176
+      Top = 32
+      Width = 105
+      Height = 27
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+    end
   end
   object pnlBotoes: TPanel
     Left = 0
     Top = 89
-    Width = 247
+    Width = 292
     Height = 257
     Align = alClient
     TabOrder = 1
@@ -63,6 +95,7 @@ object Form1: TForm1
       Height = 41
       Caption = '1'
       TabOrder = 2
+      OnClick = btnUmClick
     end
     object btnPonto: TButton
       Left = 15
@@ -103,6 +136,7 @@ object Form1: TForm1
       Height = 41
       Caption = '0'
       TabOrder = 7
+      OnClick = btnZeroClick
     end
     object btnNove: TButton
       Left = 127
@@ -135,6 +169,7 @@ object Form1: TForm1
       Height = 41
       Caption = '='
       TabOrder = 11
+      OnClick = btnIgualClick
     end
     object btnDivi: TButton
       Left = 183
@@ -173,22 +208,41 @@ object Form1: TForm1
       OnClick = btnSubtClick
     end
     object btnSair: TButton
-      Left = 15
+      Left = 16
       Top = 213
-      Width = 105
-      Height = 33
+      Width = 217
+      Height = 28
       Caption = 'Sair'
       TabOrder = 16
       OnClick = btnSairClick
     end
     object btnClear: TButton
-      Left = 127
-      Top = 213
-      Width = 105
-      Height = 33
+      Left = 240
+      Top = 112
+      Width = 41
+      Height = 129
       Caption = 'C'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 17
-      OnClick = btnSairClick
+    end
+    object btnApagar: TButton
+      Left = 240
+      Top = 21
+      Width = 41
+      Height = 89
+      Caption = '<--'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 18
     end
   end
 end
