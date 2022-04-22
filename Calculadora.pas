@@ -32,6 +32,8 @@ type
     edtSValor: TEdit;
     btnClear: TButton;
     btnApagar: TButton;
+    lblOpFeita: TLabel;
+    lblPalavraResultado: TLabel;
     procedure btnSairClick(Sender: TObject);
     procedure btnSubtClick(Sender: TObject);
     procedure btnSomaClick(Sender: TObject);
@@ -158,6 +160,11 @@ begin
    PrimeiroNumero := StrToFloat(edtPValor.Text);
    SegundoNumero  := StrToFloat(edtSValor.Text);
 
+   lblOpFeita.Caption := 'Operação realizada : ' + ' ' + edtPValor.Text + ' '
+      + lblOperador.Caption + ' ' + edtSValor.Text;
+
+   lblPalavraResultado.Caption := 'Resultado :';
+
    if (lblOperador.Caption = '+') then
    begin
       ShowMessage('O resultado dessa soma é :  '
@@ -194,6 +201,7 @@ begin
    btnSoma.Enabled := True;
    btnMult.Enabled := True;
    btnDivi.Enabled := True;
+
 
 end;
 
@@ -245,6 +253,10 @@ begin
    lblOperador.Caption := EmptyStr;
    edtPValor.Text      := EmptyStr;
    edtSValor.Text      := EmptyStr;
+
+   lblOpFeita.Caption          := '';
+   lblPalavraResultado.Caption := '';
+
 
    btnSubt.Enabled := True;
    btnSoma.Enabled := True;

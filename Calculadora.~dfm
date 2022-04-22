@@ -1,6 +1,6 @@
 object frmCalculadora: TfrmCalculadora
-  Left = 834
-  Top = 246
+  Left = 1035
+  Top = 302
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Calculadora Delphi 7'

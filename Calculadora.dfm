@@ -1,6 +1,6 @@
 object frmCalculadora: TfrmCalculadora
-  Left = 1035
-  Top = 302
+  Left = 1255
+  Top = 297
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Calculadora Delphi 7'
@@ -32,7 +32,7 @@ object frmCalculadora: TfrmCalculadora
     TabOrder = 0
     object lblOperador: TLabel
       Left = 138
-      Top = 34
+      Top = 38
       Width = 7
       Height = 25
       Font.Charset = DEFAULT_CHARSET
@@ -42,9 +42,33 @@ object frmCalculadora: TfrmCalculadora
       Font.Style = [fsBold]
       ParentFont = False
     end
+    object lblOpFeita: TLabel
+      Left = 8
+      Top = 4
+      Width = 157
+      Height = 13
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object lblPalavraResultado: TLabel
+      Left = 8
+      Top = 19
+      Width = 134
+      Height = 13
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
     object edtPValor: TEdit
       Left = 8
-      Top = 32
+      Top = 36
       Width = 105
       Height = 27
       Font.Charset = ANSI_CHARSET
@@ -57,7 +81,7 @@ object frmCalculadora: TfrmCalculadora
     end
     object edtSValor: TEdit
       Left = 176
-      Top = 32
+      Top = 36
       Width = 105
       Height = 27
       Font.Charset = ANSI_CHARSET
