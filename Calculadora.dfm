@@ -1,6 +1,6 @@
 object frmCalculadora: TfrmCalculadora
-  Left = 1255
-  Top = 297
+  Left = 1115
+  Top = 244
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Calculadora Delphi 7'
@@ -31,9 +31,9 @@ object frmCalculadora: TfrmCalculadora
     ParentFont = False
     TabOrder = 0
     object lblOperador: TLabel
-      Left = 138
+      Left = 136
       Top = 38
-      Width = 7
+      Width = 17
       Height = 25
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -62,6 +62,19 @@ object frmCalculadora: TfrmCalculadora
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object lblInfo: TLabel
+      Left = 0
+      Top = 78
+      Width = 202
+      Height = 10
+      Caption = 'Os valores s'#227'o inseridos da esquerda para a direita.'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -8
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
@@ -283,5 +296,11 @@ object frmCalculadora: TfrmCalculadora
       TabOrder = 18
       OnClick = btnApagarClick
     end
+  end
+  object Timer1: TTimer
+    Interval = 2000
+    OnTimer = Timer1Timer
+    Left = 264
+    Top = 64
   end
 end

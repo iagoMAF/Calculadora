@@ -34,6 +34,8 @@ type
     btnApagar: TButton;
     lblOpFeita: TLabel;
     lblPalavraResultado: TLabel;
+    lblInfo: TLabel;
+    Timer1: TTimer;
     procedure btnSairClick(Sender: TObject);
     procedure btnSubtClick(Sender: TObject);
     procedure btnSomaClick(Sender: TObject);
@@ -53,10 +55,12 @@ type
     procedure btnSeteClick(Sender: TObject);
     procedure btnOitoClick(Sender: TObject);
     procedure btnNoveClick(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+
   end;
 
 var
@@ -130,6 +134,7 @@ begin
    btnMult.Enabled := False;
    btnDivi.Enabled := True;
 
+
 end;
 
 procedure TfrmCalculadora.btnDiviClick(Sender: TObject);
@@ -149,6 +154,7 @@ begin
    btnSoma.Enabled := True;
    btnMult.Enabled := True;
    btnDivi.Enabled := False;
+
 
 end;
 
@@ -263,6 +269,7 @@ begin
    btnMult.Enabled := True;
    btnDivi.Enabled := True;
 
+
 end;
 
 procedure TfrmCalculadora.btnApagarClick(Sender: TObject);
@@ -360,7 +367,7 @@ end;
 procedure TfrmCalculadora.btnSeteClick(Sender: TObject);
 begin
 
-   if (lblOperador.Caption = EmptyStr) then
+   if (lblOperador.Caption = EmptyStr)  then
    begin
       edtPValor.Text := edtPValor.Text + '7';
    end
@@ -397,6 +404,11 @@ begin
       edtSValor.Text := edtSValor.Text + '9';
    end;
 
+end;
+
+procedure TfrmCalculadora.Timer1Timer(Sender: TObject);
+begin
+   lblInfo.Visible := not lblInfo.Visible;
 end;
 
 end.
